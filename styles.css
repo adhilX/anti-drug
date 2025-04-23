@@ -435,7 +435,13 @@ nav {
 
 /* Pledge Section */
 .pledge {
-    background-color: var(--dark-secondary);
+    background: linear-gradient(120deg, var(--dark-secondary) 70%, var(--dark-tertiary) 100%);
+    padding: 4rem 2rem 3rem 2rem;
+    border-radius: 18px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.11);
+    border: 1px solid var(--border);
+    text-align: center;
 }
 
 .pledge-content {
@@ -943,6 +949,15 @@ footer {
     .fact-card, .reason-card, .resource-card {
         width: 100%;
     }
+    .testimonial-card {
+        margin-bottom: 1.5rem;
+    }
+    .faq-item {
+        margin-bottom: 1.5rem;
+    }
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -954,27 +969,316 @@ footer {
 .text-color {
     color: var(--text-primary);
 }
+
+/* Gallery Section */
+.gallery {
+    background: linear-gradient(120deg, var(--dark-secondary) 70%, var(--dark-tertiary) 100%);
+    padding: 4rem 2rem 3rem 2rem;
+    border-radius: 18px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+.gallery h2 {
+    color: var(--accent);
+    margin-bottom: 2.2rem;
+}
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.gallery-img {
+    max-width: 260px;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+    border: 2px solid var(--border);
+    transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+    margin-bottom: 0.5rem;
+    background: #222;
+}
+.gallery-img:hover {
+    transform: scale(1.045) translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.19);
+    border-color: var(--accent);
+}
+
+/* Testimonial and FAQ Images */
+.testimonial-img, .faq-img {
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.13);
+    border: 2px solid var(--border);
+    background: #222;
+}
+.faq-img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 0.7rem;
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        gap: 1rem;
+    }
+    .gallery-img {
+        max-width: 48vw;
+        height: 120px;
+    }
+}
+@media (max-width: 576px) {
+    .gallery {
+        padding: 2rem 0.5rem;
+    }
+    .gallery-img {
+        max-width: 95vw;
+        height: 90px;
+    }
+    .testimonial-img, .faq-img {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+/* About Section */
+.about {
+    background: linear-gradient(135deg, var(--dark-secondary) 60%, var(--dark-tertiary) 100%);
+    padding: 4rem 2rem 3rem 2rem;
+    border-radius: 18px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+    border: 1px solid var(--border);
+}
+.about .container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+.about h2 {
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+}
+.about p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+.about ul {
+    margin-top: 1.3rem;
+    padding-left: 1.5rem;
+    display: inline-block;
+    text-align: left;
+}
+.about li {
+    color: var(--text-primary);
+    margin-bottom: 0.6rem;
+    position: relative;
+    padding-left: 1.2em;
+}
+.about li::before {
+    content: '\2022';
+    color: var(--accent);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: linear-gradient(135deg, var(--dark-tertiary) 80%, var(--dark-secondary) 100%);
+    padding: 4rem 2rem 3rem 2rem;
+    border-radius: 18px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    border: 1px solid var(--border);
+}
+.testimonials h2 {
+    color: var(--accent);
+    margin-bottom: 2.2rem;
+}
+.testimonials-container {
+    display: flex;
+    gap: 2.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.testimonial-card {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    padding: 2.1rem 1.7rem 1.6rem 1.7rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    max-width: 340px;
+    min-width: 250px;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.13rem;
+    border: 1px solid var(--border);
+    position: relative;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.testimonial-card:hover {
+    transform: translateY(-8px) scale(1.025);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.19);
+    border-color: var(--accent);
+}
+.testimonial-card span {
+    display: block;
+    margin-top: 1.2rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* FAQ Section */
+.faq {
+    background: linear-gradient(135deg, var(--dark-secondary) 80%, var(--dark-tertiary) 100%);
+    padding: 4rem 2rem 3rem 2rem;
+    border-radius: 18px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    border: 1px solid var(--border);
+}
+.faq h2 {
+    color: var(--accent);
+    margin-bottom: 2.2rem;
+}
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.faq-item {
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.6rem 1.4rem 1.2rem 1.4rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    border: 1px solid var(--border);
+    transition: box-shadow 0.18s, border-color 0.18s;
+}
+.faq-item:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.16);
+    border-color: var(--accent);
+}
+.faq-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.18rem;
+    color: var(--accent);
+}
+.faq-item p {
+    color: var(--text-secondary);
+    font-size: 1.03rem;
+}
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(135deg, var(--dark-tertiary) 60%, var(--dark-secondary) 100%);
+    padding: 4rem 2rem 3rem 2rem;
+    border-radius: 18px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    border: 1px solid var(--border);
+}
+.contact h2 {
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem 1.5rem 1.2rem 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.11);
+    border: 1px solid var(--border);
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem 1.1rem;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--dark-secondary);
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    resize: none;
+    margin-bottom: 0.4rem;
+    transition: border-color 0.18s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+.contact-form textarea {
+    min-height: 110px;
+}
+.contact-form button {
+    align-self: flex-end;
+    margin-top: 0.5rem;
+}
+.contact-details {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.08rem;
+    margin-top: 1.2rem;
+}
+
 .carousel-caption h5 {
     font-size: 4rem;
     font-weight: bold;
-
     text-shadow: 2px 2px 8px #000;
-  }
+}
 
-  .carousel-caption p {
+.carousel-caption p {
     font-size: 2.1rem;
     color: #fff6f6;
     text-shadow: 1px 1px 6px #000;
-  }
+}
 
-  .carousel img {
+.carousel img {
     object-fit: cover;
-  }
+}
 
-  .main-heading {
+.main-heading {
     font-size: 3rem;
     font-weight: 700;
     color: #0d6efd;
     text-align: center;
     margin-bottom: 2rem;
-  }
+}
+
+/* Responsive for new sections */
+@media (max-width: 992px) {
+    .testimonials-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 576px) {
+    .about, .testimonials, .faq, .contact {
+        padding: 2rem 0.5rem;
+        border-radius: 10px;
+    }
+    .testimonial-card {
+        min-width: unset;
+        max-width: 100%;
+    }
+    .faq-container {
+        padding: 0 0.5rem;
+    }
+    .contact-form {
+        padding: 0 0.5rem;
+    }
+}
